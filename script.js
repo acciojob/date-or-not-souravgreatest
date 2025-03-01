@@ -3,11 +3,12 @@ var isDate = function(input) {
     return !isNaN(input.getTime());
   }
   if (typeof input === 'string' || typeof input === 'number') {
-    const parsedDate = Date.parse(input);
-    return !isNaN(parsedDate);
+    const parsedDate = new Date(input);
+    return !isNaN(parsedDate.getTime());
   }
   return false;
 };
+
 
 
 // Do not change the code below.
